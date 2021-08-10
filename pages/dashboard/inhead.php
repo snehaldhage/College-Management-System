@@ -1,0 +1,1 @@
+<?php $obj->validate_user(); ?>

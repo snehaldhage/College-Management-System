@@ -1,0 +1,3 @@
+class mylib {
+ constructor() { }
+}

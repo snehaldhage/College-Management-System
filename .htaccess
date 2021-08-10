@@ -1,0 +1,25 @@
+ErrorDocument 400 http://localhost/college_management_system/error
+ErrorDocument 401 /error
+ErrorDocument 402 http://localhost/college_management_system/error
+ErrorDocument 403 http://localhost/college_management_system/error
+ErrorDocument 404 http://localhost/college_management_system/404_htm
+Options +FollowSymLinks
+Options -Indexes
+RewriteEngine On
+#rewrite conditions
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)$ index.php?p=$1 [L]
+RewriteRule ^404_htm$ index.php?page=404_htm [L]
+RewriteRule ^welcome$ index.php?page=welcome [L]
+RewriteRule ^login$ index.php?page=login [L]
+RewriteRule ^profile$ index.php?page=profile [L]
+RewriteRule ^register$ index.php?page=register [L]
+RewriteRule ^dashboard$ index.php?page=dashboard [L]
+RewriteRule ^users$ index.php?page=users [L]
+RewriteRule ^forgot_password$ index.php?page=forgot_password [L]
+RewriteRule ^course-management$ index.php?page=course-management [L]
+RewriteRule ^manage-subject$ index.php?page=manage-subject [L]
